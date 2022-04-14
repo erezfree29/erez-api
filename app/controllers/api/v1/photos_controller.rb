@@ -17,7 +17,7 @@ class Api::V1::PhotosController < ApplicationController
 
   def update
     # we find the photo we want to update using the album_id and the id passed via the params
-    @photo = Photo.where(album_id:params[:album_id],id:params[:id])
+    @photo = Photo.where(photo_params)
     if @photo
         # we update the name of the photo to the name passed via the params (put request)
         @photo.update(name:params[:name])
