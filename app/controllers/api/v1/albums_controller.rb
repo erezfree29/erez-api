@@ -50,7 +50,7 @@ module Api
       private
 
       def album_params
-        params.require(:album).permit(:id, :name)
+        params.permit(:id, :name)
       end
     end
   end
