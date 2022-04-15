@@ -1,12 +1,12 @@
 require 'uri'
 require 'net/http'
 
-puts 'Creating an album'
 uri = URI('http://localhost:3000/api/v1/albums')
 params = { name: "family photos" }
 res = Net::HTTP.post_form(uri, params)
 
 if (res.is_a?(Net::HTTPSuccess))
+    puts 'Creating an album'
     puts res.body 
     # finding the album id so we can create photos for it
     body = res.body.chars

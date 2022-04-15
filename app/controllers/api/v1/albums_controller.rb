@@ -5,7 +5,7 @@ module Api
     class AlbumsController < ApplicationController
       append_view_path "#{Rails.root}/app/views/api/v1/albums" # you have to specify your views location as well
       def index
-        @albums = Album.all
+        @albums = Album.all.includes(:photos)
       end
 
       def create
